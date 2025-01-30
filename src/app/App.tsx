@@ -65,6 +65,7 @@ export const App = () => {
     setThemeMode(themeMode == 'light' ? 'dark' : 'light')
   }
 
+  //Для тудулистов
   const changeFilter = (todolistId: string, filter: FilterValues) => {
     dispatch(changeTodolistFilterAC({id: todolistId, filter}))
   }
@@ -74,13 +75,14 @@ export const App = () => {
   }
 
   const deleteTodolist = (todolistId: string) => {
-    dispatch(deleteTodolistAC(todolistId))
+    dispatch(deleteTodolistAC({id: todolistId}))
   }
 
   const changeTodolistTitle = (todolistId: string, title: string) => {
     dispatch(changeTodolistTitleAC({id: todolistId, title}))
   }
 
+  //Для тасок
   const deleteTask = (todolistId: string, taskId: string) => {
     dispatch(deleteTaskAC({todolistId, taskId}))
   }
